@@ -5,7 +5,7 @@
 [Monitoria]: <https://www.icloud.com/numbers/0142PvlEw-sR0vCFRJRWTU24Q#Monitores> "Monitoria"  
 [Prova de Suficiência (inscrição)]: <https://forms.office.com/r/3BD3DgMu8L> "Prova de Suficiência (inscrição)"
 
-# Disciplina de Introdução à Programação
+# Disciplina de Introdução à Programação B - CMP.0166.00.003-9 - Danton Cavalcanti Franco Junior  
 
 Olá, seja bem vindo .. 😁  
 
