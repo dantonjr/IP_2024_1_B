@@ -7,7 +7,7 @@
 
 # Disciplina de Introdução à Programação B - CMP.0166.00.003-9 - Danton Cavalcanti Franco Junior  
 
-Olá, seja bem vindo .. 😁  
+Olá, seja bem vindo ... 😁  
 
 Este é o principal material da disciplina de Introdução à Programação, e ele está sendo disponibilizado no GitHub. O conteúdo está dividido em 6 (seis) unidades (pastas), seguindo o proposto no plano de ensino. Cada unidade tem um texto de apoio e suas respectivas videoaulas, atividades, e ainda, várias anotações feitas em aula.
 
