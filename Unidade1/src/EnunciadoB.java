@@ -2,14 +2,14 @@ public class EnunciadoB {
   public static void main(String[] args) {
 
     // Entrada
-    int largura = 3; 
+    int largura = 3;
     int altura = 7;
 
-    //  Processo
+    // Processo
     int area = largura * altura;
 
     // Saída
-    System.out.println("Área: "+area);
-    
+    System.out.println("Área: " + area);
+
   }
 }
