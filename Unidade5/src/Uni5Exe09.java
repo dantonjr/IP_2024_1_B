@@ -1,31 +1,26 @@
 import java.util.Scanner;
 
-
 public class Uni5Exe09 {
 
     public static void main(String[] args) {
-        Scanner teclado = new Scanner(System.in); //.useDelimiter("-");
-
-        System.out.print("Digite a quantidade de alunos da turma: ");
-        int qtdAlunos = Integer.parseInt(teclado.nextLine());
-
+        Scanner teclado = new Scanner(System.in);
+        System.out.print("Informe o total de alunos..: ");
+        int qtdAlunos = teclado.nextInt();
         String nomes18Anos = "";
-        int qtdAcima20 = 0;
-        for (int nrAluno = 0; nrAluno < qtdAlunos; nrAluno++) {
-            System.out.print("Digite o nome do aluno: ");
-            String nome = teclado.nextLine();
-            System.out.print("Digite a idade do aluno: ");
-            int idade = Integer.parseInt(teclado.nextLine());
+        int contaALunosAcima20Anos =0;
+        for (int nroAluno = 0; nroAluno < qtdAlunos; nroAluno++) {
+            System.out.print("Informe nome do aluno...: ");
+            String nome = teclado.next();
+            System.out.print("Informe a idade do aluno..: ");
+            int idade = teclado.nextInt();
 
             if (idade == 18) {
-                nomes18Anos += nome + "  ";
+                nomes18Anos += nome + " ";
             } else if (idade > 20) {
-                qtdAcima20++;
+                contaALunosAcima20Anos++;
             }
         }
-
         System.out.println("Alunos com 18 anos: " + nomes18Anos);
-        System.out.println(qtdAcima20 + " alunos com mais de 20 anos");
-        teclado.close();
+        System.out.println("Total de alunos com + 20 anos: " + contaALunosAcima20Anos);
     }
 }
