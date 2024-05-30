@@ -1,45 +1,52 @@
 import java.util.Scanner;
 
 public class Uni6Exe07 {
+
   private Uni6Exe07() {
     Scanner teclado = new Scanner(System.in);
-    int vetTamanho;
-
-    // Ler um valor válido
-    do {
-      System.out.print("Valor [1..20]: ");
-      vetTamanho = teclado.nextInt();
-    } while (vetTamanho < 1 || vetTamanho > 20);
-    int vetor[] = new int[vetTamanho];
-
-    vetorLer(vetor, teclado);
-    vetorOrdenar(); // FIXME: falta fazer
-    vetorImprimir(vetor);
-
-    teclado.close();
+    int valores[] = new int[leNumero(teclado, 1, 10)];
+    leVetor(teclado, valores);
+    mostraVetor(valores);
+    ordenaVetor(valores);
+    mostraVetor(valores);
   }
 
-  // Leitura do vetor
-  private void vetorLer(int vetor[], Scanner teclado) {
-    System.out.println(" __ vetorLer");
-    int valor;
-    int vetorPos = 0;
-    int i = 0;
-    while (i < vetor.length) {
-      System.out.print("Vet[" + i + "]: ");
-      valor = teclado.nextInt();
-      if (!vetorPesquisa(vetor, valor, vetorPos)) {
-        vetor[i] = valor;
-        vetorPos++;
-        i++;
+  private void ordenaVetor(int vetor[]) {
+    int aux;
+    for (int i = 0; i < vetor.length; ++i) {
+      for (int j = i; j < vetor.length; ++j) {
+        if (vetor[i] > vetor[j]) {
+          aux = vetor[i];
+          vetor[i] = vetor[j];
+          vetor[j] = aux;
+        }
       }
     }
   }
 
-  // Pesquisar se um valor já existe no vetor
-  private boolean vetorPesquisa(int vetor[], int valor, int vetorPos) {
-    System.out.println(" __ vetorPesquisa");
-    for (int i = 0; i < vetorPos; i++) {
+  private void mostraVetor(int vetor[]) {
+    for (int i = 0; i < vetor.length; i++) {
+      System.out.printf("%d, ", vetor[i]);
+    }
+    System.out.println("");
+  }
+
+  private void leVetor(Scanner tec, int vetor[]) {
+    int i = 0;
+    while (i < vetor.length) {
+      System.out.printf("Posição %d%n", i);
+      int valor = leNumero(tec, -100, 100);
+      if (!procuraValorVetor(valor, vetor)) {
+        vetor[i] = valor;
+        i++;
+      } else {
+        System.out.printf("Valor %d já existe no vetor%n", valor);
+      }
+    }
+  }
+
+  private boolean procuraValorVetor(int valor, int vetor[]) {
+    for (int i = 0; i < vetor.length; i++) {
       if (valor == vetor[i]) {
         return true;
       }
@@ -47,18 +54,13 @@ public class Uni6Exe07 {
     return false;
   }
 
-  // Ordenar (crescente) os valores de um vetor
-  private void vetorOrdenar() {
-    System.out.println(" __ vetorOrdenar");
-
-  }
-
-  // Imprimir os valores de um vetor
-  private void vetorImprimir(int vet[]) {
-    System.out.println(" __ vetorImprimir");
-    for (int i = 0; i < vet.length; i++) {
-      System.out.println("Vet[" + i + "]: " + vet[i]);
-    }
+  private int leNumero(Scanner tec, int minimo, int maximo) {
+    int numero = 0;
+    do {
+      System.out.printf("Informe um número >= %d e <= %d..: ", minimo, maximo);
+      numero = tec.nextInt();
+    } while (numero < minimo || numero > maximo);
+    return numero;
   }
 
   public static void main(String[] args) {
