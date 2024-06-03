@@ -120,8 +120,6 @@ public class Uni6Exe10 {
 		System.out.println("_ valores ordenados.");
 	}
 
-	// adaptado:
-	// https://gist.github.com/dalton-reis/1c5f2bdf65b251730e1cb76c5a61bb1b
 	private void inverter(int vet[], int posFim) {
 		int temp = 0;
 		for (int i = 0; i < posFim; i++) {
